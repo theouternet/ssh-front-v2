@@ -1,28 +1,28 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { connect } from "react-redux"
+//
+
 
 class SearchFilterContainer extends React.Component {
 
-    render(){
+    constructor(){
+        super()
 
-    
-        let {
-
-
-
-
+        this.state = {
+            searchText: ""
         }
-
-        return (
-            <div className="">
-                
-            </div>
-
-
-
-        )
-    
-    
     }
 
-}
+    handleSearchSubmit = (x) => {
+        x.preventDefault()
+        if (this.state.searchText !== ""){
+            let search = this.state.searchText
+            fetch(`http://localhost:3001/software/search/${search}`)
+            .then(resp => resp.json())
+            .then(software => {
+                this.props.searchResults(software.results)
+            })
+        }
+        
+     
+    }
