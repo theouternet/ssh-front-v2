@@ -15,6 +15,17 @@ const primaryReducer = (state = [], action) => {
     }
 }
 
+
+const searchReducer = (state = "", action) => {
+    switch(action.type){
+        case "MODIFY_SEARCH":
+            return action.payload
+        default: 
+            return state;
+    }
+}
+
+
 const rootReducer = combineReducers({
     softwareState: primaryReducer,
     searchText: searchReducer
