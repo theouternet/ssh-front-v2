@@ -14,4 +14,14 @@ class DetailPg extends React.Component {
     
 }
 
-//export default......
+
+const mapStateToProps = state => {
+    return {
+
+//
+
+    }
+}
+
+
+export default connect(mapStateToProps, null)(DetailPg)

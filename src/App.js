@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch, withRouter, Redirect} from "react-router-dom";
 
 import logo from './logo.svg';
@@ -18,7 +18,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
-class App extends Component {
+class App extends React.Component {
   
 
 
@@ -32,7 +32,7 @@ class App extends Component {
           < Route exact path="/list" component={ListPg}/>
           < Route exact path="/list/:id" render={(props) => {
             let softwareID = props.match.params.id 
-              return < Show softwareId={softwareID}/>
+              return < DetailPg softwareId={softwareID}/>
           }}/>
 
         </Switch>
@@ -44,4 +44,4 @@ class App extends Component {
 
 }
 
-export default app
+export default App

@@ -23,6 +23,19 @@ class SearchFilterContainer extends React.Component {
                 this.props.searchResults(software.results)
             })
         }
-        
-     
     }
+
+
+
+    render(){
+        return (
+            <div className="">
+              
+
+
+            </div>
+        )
+    }
+}
+
+export default SearchFilterContainer
