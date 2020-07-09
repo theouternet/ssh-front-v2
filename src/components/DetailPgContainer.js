@@ -6,7 +6,7 @@ import DetailsContainer from "./DetailsContainer"
 import ReviewsContainer from "./ReviewsContainer"
 // styles 
 
-class DetailPgContainer extends React.Component {
+class DetailPg extends React.Component {
 
 
 

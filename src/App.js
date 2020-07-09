@@ -9,35 +9,39 @@ import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducer";
 import thunk from "redux-thunk"
 
-import HomePgContainer from "./components/HomePgContainer"
+import HomePg from "./components/HomePgContainer"
 import TopNav from "./components/TopNav"
-import ListPgContainer from "./components/ListPgContainer"
-import DetailPgContainer from "./components/DetailPgContainer"
+import ListPg from "./components/ListPgContainer"
+import DetailPg from "./components/DetailPgContainer"
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
+class App extends Component {
+  
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  render() {
+    return (
+      <div className="App">
+        < TopNav />
+        <Switch>
+          < Route exact path="/" render={() => <Redirect to="/home"/>}/>
+          < Route exact path="/home" component={HomePg}/>
+          < Route exact path="/list" component={ListPg}/>
+          < Route exact path="/list/:id" render={(props) => {
+            let softwareID = props.match.params.id 
+              return < Show softwareId={softwareID}/>
+          }}/>
+
+        </Switch>
+      </div>
+    )
+
+
+  }
+
 }
 
-export default App;
+export default app
