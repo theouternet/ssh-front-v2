@@ -16,7 +16,7 @@ const primaryReducer = (state = [], action) => {
 }
 
 const rootReducer = combineReducers({
-    _____: primaryReducer,
+    softwareState: primaryReducer,
     searchText: searchReducer
 });
 
