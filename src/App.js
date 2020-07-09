@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { connect } from "react-redux";
+
+import { createStore, applyMiddleware, compose } from "redux";
+import rootReducer from "./reducer";
+import thunk from "redux-thunk"
+
+//const composeEnhancers = ______
+//const store = createStore(___)
+
 
 function App() {
   return (
