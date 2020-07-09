@@ -16,4 +16,4 @@ render(){
 
 }
 
-import default HomePg;
+export default HomePg;
