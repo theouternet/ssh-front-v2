@@ -6,6 +6,12 @@ class HomePgHeader extends React.Component {
     render(){
         return(
             <div className="homepg-header">
+                
+                
+                
+                <button className="button-home">
+                       <Link to="/list">Browse</Link> 
+                </button>
 
 
 
