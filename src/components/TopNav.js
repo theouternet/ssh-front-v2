@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { connect } from "react-redux"
 //
 
 
@@ -25,12 +24,4 @@ class TopNav extends React.Component {
  }
 }
 
-const mapStateToProps = (state) => ({
-    //currentUser
-})
-
-const mapDispatchToProps = dispatch => ({
- //   signOut: () => dispatch(signOut())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(TopNav)
+export default TopNav

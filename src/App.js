@@ -1,9 +1,7 @@
 import React from 'react';
 import { Route, Switch, withRouter, Redirect} from "react-router-dom";
 
-import logo from './logo.svg';
 import './App.css';
-import { connect } from "react-redux";
 
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers/reducer";
