@@ -3,7 +3,7 @@
 let HOST_URL = "http://localhost:3001"
 
 
-function searchResults(games){
+function searchResults(software){
     return {type: "SEARCH_RESULTS", payload: software}
 }
 

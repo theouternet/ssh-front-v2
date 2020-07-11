@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux"
+import {searchResults} from "../actions/actions"
 //
 
 
@@ -22,8 +24,10 @@ class SearchFilterContainer extends React.Component {
                 this.props.searchResults(software.results)
             })
         }
+        //
     }
 
+    //
 
 
     render(){
@@ -37,4 +41,12 @@ class SearchFilterContainer extends React.Component {
     }
 }
 
-export default SearchFilterContainer
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        searchResults: (software) => { dispatch(searchResults(software)) }
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(SearchFilterContainer)
