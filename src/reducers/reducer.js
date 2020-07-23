@@ -1,19 +1,26 @@
 import { combineReducers } from "redux";
 
-const primaryReducer = (state = [], action) => {
-    switch(action.type) {
-     
 
 
-        case "SEARCH_RESULTS":
-            return action.payload
+import { SET_SOFTWARE } from './actions';
 
 
 
-        default: 
-            return state;
+const initialState = [];
+
+
+
+
+export default (state = initialState, action) => {
+    switch (action.type) {
+      case SET_SOFTWARE:
+        return action.software;
+      default:
+        return state;
     }
-}
+  };
+
+
 
 
 const searchReducer = (state = "", action) => {
@@ -27,7 +34,7 @@ const searchReducer = (state = "", action) => {
 
 
 const rootReducer = combineReducers({
-    softwareState: primaryReducer,
+    getSoftware: primaryReducer,
     searchText: searchReducer
 });
 
