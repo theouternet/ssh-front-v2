@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch, withRouter, Redirect} from "react-router-dom";
 import { connect } from "react-redux"
 import './App.css';
@@ -6,24 +6,15 @@ import { getSoftware } from './actions/actions';
 
 import HomePg from "./components/HomePgContainer"
 import TopNav from "./components/TopNav"
-import ListPg from "./components/ListPgContainer"
+import ListPgContainer from "./components/ListPgContainer"
 import DetailPg from "./components/DetailPgContainer"
 //
 
 
-store.dispatch(getSoftware());
 
+class App extends Component {
 
-
-class App extends React.Component {
-
-
-
-  componentDidMount(){
-
-    this.props.fetchSoftware()
-
-  }
+//
 
   
 
@@ -34,7 +25,7 @@ class App extends React.Component {
         <Switch>
           < Route exact path="/" render={() => <Redirect to="/home"/>}/>
           < Route exact path="/home" component={HomePg}/>
-          < Route exact path="/software" component={ListPg}/>
+          < Route exact path="/software" component={ListPgContainer}/>
           < Route exact path="/software/:id" render={(props) => {
             let softwareId = props.match.params.id 
               return < DetailPg softwareId={softwareId}/>
@@ -49,14 +40,7 @@ class App extends React.Component {
 
 }
 
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchSoftware: () => {dispatch(fetchSoftware())},
-
-  }
-}
-
 //
 
-export default withRouter(connect(mapDispatchToProps)(App))
+//
+export default (App);

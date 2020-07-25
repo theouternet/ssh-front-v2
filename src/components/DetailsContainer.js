@@ -8,7 +8,7 @@ class DetailsContainer extends React.Component{
 
     render(){
 
-        let { image, description_raw, rating, released, website, stores} = this.props.softwareObj
+        let { image } = this.props.softwareObj
    
         return (
             

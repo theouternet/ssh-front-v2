@@ -1,32 +1,25 @@
 import React from "react"
-
 import { trackPromise} from 'react-promise-tracker';
-
+//
 import { connect } from 'react-redux'
-
+//
 import DetailsContainer from "./DetailsContainer"
-
 // styles 
 
 
 class DetailPg extends React.Component {
-
-
     constructor(){
         super()
 
         this.state = {
-            showSoftware: {},
-            softwareImages: []
+            showSoftware: {}
         }
     }
  
 
     componentDidMount(){
         let softwareId = this.props.softwareId
-
-trackPromise(
-
+        trackPromise(
             fetch(`http://localhost:3001/software/${softwareId}`)
             .then(resp => resp.json())
             .then(software => {
@@ -34,18 +27,17 @@ trackPromise(
                     showSoftware: software
                 })
             })
-
-            )
+        );
 
     }
 
 
-    render() {
+    render(){
 
         
         return (
           
-            //
+            //spinner/loading animation here?
           
           <div>
             
@@ -60,7 +52,7 @@ trackPromise(
 
 const mapStateToProps = state => {
     return {
-        software: state.showSoftware
+        userLikedSoftware: state.userLikedSoftware
     }
 }
 

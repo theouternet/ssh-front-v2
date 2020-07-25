@@ -2,43 +2,33 @@
 
 export const HOST_URL = "http://localhost:3001"
 
-
-function searchResults(software){
-    return {type: "SEARCH_RESULTS", payload: software}
-}
-
-function modifySearch(text){
-    return {type: "MODIFY_SEARCH", payload: text}
-}
-
-
-
 // 
 
-export const SET_SOFTWARE = 'SET_SOFTWARE';
 
-
-export function getSoftware(){
-    return dispatch => {
-        fetch('${HOST_URL}/software/:id')
-           .then(res => res.json())
-           .then(res => res.results)
-           .then(software => 
-             dispatch(setSoftware(software))
-             )
+function getSoftware(){
+    return (dispatch) => {
+        fetch(`${HOST_URL}/software`)
+        .then(res => res.json())
+           .then(result => {
+             dispatch(setSoftware(result))
+           })
            }
+        }
 
 
-export function setSoftware(software) {
-    return {
-        type: SET_CHARACTERS,
-        characters,
-      };
-    }
-
+function setSoftware(software) {
+    return {type: "SHOW_SOFTWARE", payload: software.results}
+}
 //
 
 
+function fetchedLikedSoftware(software){
+  return {type: "GET_LIKED_SOFTWARE", payload: software}
+}
 
 
-export { searchResults, modifySearch, getSoftware, setSoftware }
+
+
+
+
+export { getSoftware, fetchedLikedSoftware }
