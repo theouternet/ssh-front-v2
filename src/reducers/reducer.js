@@ -1,5 +1,20 @@
 import { combineReducers } from "redux";
 
+//
+export default function SoftwareReducer (state=[], action) {
+
+    switch(action.type){
+      case 'FETCH_SOFTWARE':
+        return action.payload
+      case 'REMOVE_SOFTWARE':
+          return action.payload
+      default:
+        return state
+    }
+  }  
+
+  
+//
 
 const showReducer = (state = {}, action) => {
     switch(action.type){
@@ -10,7 +25,6 @@ const showReducer = (state = {}, action) => {
     }
 }
 
-
 const likedSoftwareReducer = (state = [], action) => {
     switch(action.type) {
         case "GET_LIKED_SOFTWARE":
@@ -20,8 +34,10 @@ const likedSoftwareReducer = (state = [], action) => {
     }
 }
 
-
 const rootReducer = combineReducers({
+   
+   software: SoftwareReducer,
+   
     showSoftware: showReducer,
     userLikedSoftware: likedSoftwareReducer
 });
