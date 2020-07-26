@@ -1,19 +1,38 @@
 import React from "react";
+import {connect} from 'react-redux'
+import {Link} from 'react-router'
 import SearchFilterContainer from "./SearchFilterContainer"
 import ResultsContainer from "./ResultsContainer"
 // styles 
 
-class ListPgContainer extends React.Component {
+function ListPgContainer (props) {
 
-    render (){
-        return(
-            <div className="list-page">
-                < SearchFilterContainer />
-                < ResultsContainer />
-            </div>
-        )
-    }
-
+	return(
+		<div>
+			<div id="software-list">
+				<h3>Browse Software</h3>
+				<ul>
+				{props.software.map((software) => {
+					return(
+					<li key={'software' + software.id}>
+						<Link to={`/software/${software.id}`}>
+							{software.name}
+						</Link>
+					</li>
+				)
+			})}
+				</ul>
+			</div>
+			{props.children}
+		</div>
+	)
 }
 
-export default ListPgContainer
+function mapStateToProps(state){
+	return{
+		software: state.software
+	}
+}
+
+
+export default connect(mapStateToProps)(ListPgContainer)

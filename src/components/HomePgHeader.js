@@ -10,7 +10,7 @@ class HomePgHeader extends React.Component {
                 
                 
                 <button className="button-home">
-                       <Link to="/list">Browse</Link> 
+                       <Link to="/software">Browse</Link> 
                 </button>
 
 
