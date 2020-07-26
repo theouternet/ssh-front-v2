@@ -5,6 +5,22 @@ export const HOST_URL = "http://localhost:3001"
 // 
 
 
+function fetchSoftware(){
+  //add filter by criteria functionality here + argument
+  fetch(`${HOST_URL}/software`)
+  		.then(response => {return response.json()})
+			.then(software => {return software})
+	return ({
+		type: 'FETCH_SOFTWARE',
+		payload: software
+	})
+}
+
+//REMOVE_SOFTWARE goes here
+
+
+
+//
 function getSoftware(){
     return (dispatch) => {
         fetch(`${HOST_URL}/software`)
@@ -31,4 +47,4 @@ function fetchedLikedSoftware(software){
 
 
 
-export { getSoftware, fetchedLikedSoftware }
+export { fetchSoftware, getSoftware, fetchedLikedSoftware }
