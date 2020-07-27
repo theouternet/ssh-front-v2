@@ -1,6 +1,17 @@
 import { combineReducers } from "redux";
 
-//
+
+
+export default function CategoriesReducer(state=[], action){
+	switch(action.type){
+		case 'FETCH_CATEGORIES':
+			return action.payload
+		default:
+			return state
+	}
+}
+
+
 export default function SoftwareReducer (state=[], action) {
 
     switch(action.type){
@@ -14,32 +25,9 @@ export default function SoftwareReducer (state=[], action) {
   }  
 
   
-//
-
-const showReducer = (state = {}, action) => {
-    switch(action.type){
-        case "SHOW_SOFTWARE":
-            return action.payload
-        default: 
-            return state;
-    }
-}
-
-const likedSoftwareReducer = (state = [], action) => {
-    switch(action.type) {
-        case "GET_LIKED_SOFTWARE":
-            return action.payload
-        default: 
-            return state;
-    }
-}
-
 const rootReducer = combineReducers({
-   
-   software: SoftwareReducer,
-   
-    showSoftware: showReducer,
-    userLikedSoftware: likedSoftwareReducer
+   categories: CategoriesReducer,
+   software: SoftwareReducer
 });
 
 export default rootReducer;
