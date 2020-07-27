@@ -22,3 +22,34 @@ class SearchFilterContainer extends React.Component{
 
 //good
 
+checkboxHandler (event){
+    if (event.target.checked){
+        let selectedCategories = this.state.selectedCategories
+        const newCategory = this.props.categories.find((category) => {
+            return (category.id === parseInt(event.target.id))
+        })
+
+        this.setState({
+            selectedCategories: [...selectedCategories, newCategory]
+        })
+        this.props.actions.fetchSoftware([...selectedCategories, newCategory])
+
+        browserHistory.push('/software')
+
+    } else {
+        let selectedCategories = this.state.selectedCategories
+
+        const removedCategoryId = parseInt(event.target.id)
+        const removedCategory = this.state.selectedCategories.find((category) => {return category.id === removedCategoryId})
+
+        const removedCategoryIndex = selectedCategories.indexOf(removedCategory)
+        selectedCategories.splice(removedCategoryIndex, 1)
+
+        this.setState({
+            selectedCategories: selectedCategories
+        })
+
+        this.props.actions.removeSoftware(selectedCategories)
+
+    }
+}
