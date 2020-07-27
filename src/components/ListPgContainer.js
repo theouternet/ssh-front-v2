@@ -12,11 +12,11 @@ function ListPgContainer (props) {
 			<div id="software-list">
 				<h3>Browse Software</h3>
 				<ul>
-				{props.software.map((software) => {
+				{props.software.map((s) => {
 					return(
-					<li key={'software' + software.id}>
-						<Link to={`/software/${software.id}`}>
-							{software.name}
+					<li key={'software' + s.id}>
+						<Link to={`/software/${s.id}`}>
+							{s.name}
 						</Link>
 					</li>
 				)
