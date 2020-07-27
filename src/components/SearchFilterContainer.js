@@ -15,12 +15,11 @@ class SearchFilterContainer extends React.Component{
 		super(props)
 		this.state = {
 			selectedCategories: [],
-			term: ""
+			query: ""
 		}
 		this.checkboxHandler = this.checkboxHandler.bind(this)
 	}
 
-//good
 
 checkboxHandler (event){
     if (event.target.checked){
@@ -52,4 +51,38 @@ checkboxHandler (event){
         this.props.actions.removeSoftware(selectedCategories)
 
     }
+}
+
+//good
+
+
+handleSearchChange(event) {
+    this.setState({query: event.target.value})
+}
+
+render(){
+    return(
+        <div id="search">
+            <div id="category-search">
+                <h3>Search by Category</h3>
+                <input value={this.state.query} placeholder="Search Categories" onChange={this.handleSearchChange.bind(this)} />
+                <form>
+                {this.props.categories.filter((category) =>{
+                    return (this.state.query === "") || (category.name.includes(this.state.query.toLowerCase()))}).map((category) => {
+                        return(
+                            <div key={category.id}>
+                                <input type="checkbox" id={category.id} onChange={this.checkboxHandler} ref={category.id} checked={this.state.selectedCategories.includes(category)}/>
+                                <label htmlFor={category.id}> {category.name}</label>
+                            </div>
+                        )
+                    })}
+
+                </form>
+            </div>
+            <div id="search-children">
+                {this.props.children}
+            </div>
+        </div>
+    )
+}
 }
