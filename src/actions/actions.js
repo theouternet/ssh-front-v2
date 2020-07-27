@@ -1,13 +1,23 @@
 // import __ from __
 
-export const HOST_URL = "http://localhost:3001"
+export const HOST_URL = "http://localhost:3001/"
 
-// 
+// pull from own db w seeds on herokuapp?
 
 
-function fetchSoftware(){
-  //add filter by criteria functionality here + argument
-  fetch(`${HOST_URL}/software`)
+export function fetchCategories(){
+	const categories = fetch(`${baseUrl}categories`)
+		.then(response => {return response.json()})
+		.then(categories => {return categories})
+	return({
+		type: 'FETCH_CATEGORIES',
+		payload: categories
+	})
+}
+
+export function fetchSoftware(selectedCategories){
+	const stringifiedIds = JSON.stringify (selectedCategories.map((category) => {return category.id}))
+	const software = 	fetch(`${baseUrl}software?categoryIds=${stringifiedIds}`)
   		.then(response => {return response.json()})
 			.then(software => {return software})
 	return ({
@@ -16,35 +26,3 @@ function fetchSoftware(){
 	})
 }
 
-//REMOVE_SOFTWARE goes here
-
-
-
-//
-function getSoftware(){
-    return (dispatch) => {
-        fetch(`${HOST_URL}/software`)
-        .then(res => res.json())
-           .then(result => {
-             dispatch(setSoftware(result))
-           })
-           }
-        }
-
-
-function setSoftware(software) {
-    return {type: "SHOW_SOFTWARE", payload: software.results}
-}
-//
-
-
-function fetchedLikedSoftware(software){
-  return {type: "GET_LIKED_SOFTWARE", payload: software}
-}
-
-
-
-
-
-
-export { fetchSoftware, getSoftware, fetchedLikedSoftware }
