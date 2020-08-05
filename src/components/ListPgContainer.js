@@ -1,38 +1,31 @@
-import React from "react";
+import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 import SearchFilterContainer from "./SearchFilterContainer"
 import ResultsContainer from "./ResultsContainer"
+import ResultBoxPreso from "./ResultBoxPreso";
 // styles 
+import { getSoftware } from '../actions/actions'
 
-function ListPgContainer (props) {
 
-	return(
-		<div>
-			<div id="software-list">
-				<h3>Browse Software</h3>
-				<ul>
-				{props.software.map((s) => {
-					return(
-					<li key={'software' + s.id}>
-						<Link to={`/software/${s.id}`}>
-							{s.name}
-						</Link>
-					</li>
-				)
-			})}
-				</ul>
+class ListPgContainer extends Component {
+
+	render(){
+		return(
+			<div>
+
+        <p>{this.props.software.length}</p>
+        <p>{this.props.software.sofware_name}</p>
+
 			</div>
-			{props.children}
-		</div>
-	)
-}
-
-function mapStateToProps(state){
-	return{
-		software: state.software
+		)
+	  }
 	}
-}
 
 
-export default connect(mapStateToProps)(ListPgContainer)
+
+	const mapStateToProps = (state) => {
+		return { software: state.software };
+	}
+
+export default connect(mapStateToProps)(ListPgContainer);

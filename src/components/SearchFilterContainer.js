@@ -2,10 +2,9 @@ import React from 'react'
 import * as actions from '../actions/actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {browserHistory} from 'react-router'
+//import {browserHistory} from 'react-router'
 //
-import {connect} from 'react-redux'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 //
 import ListPg from './ListPgContainer'
 import DetailPgContainer from './DetailPgContainer'
@@ -33,7 +32,7 @@ checkboxHandler (event){
         })
         this.props.actions.fetchSoftware([...selectedCategories, newCategory])
 
-        browserHistory.push('/software')
+        //browserHistory.push('/software')
 
     } else {
         let selectedCategories = this.state.selectedCategories
@@ -86,3 +85,18 @@ render(){
     )
 }
 }
+
+function mapStateToProps(state){
+    console.log(state)
+    return{
+        categories: state.categories
+    }
+    }
+    
+    function mapDispatchToProps(dispatch){
+    return{
+        actions: bindActionCreators(actions, dispatch)
+    }
+    }
+    
+    export default connect(mapStateToProps, mapDispatchToProps)(SearchFilterContainer)
