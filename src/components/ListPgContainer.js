@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import SearchFilterContainer from "./SearchFilterContainer"
-import ResultsContainer from "./ResultsContainer"
-import ResultBoxPreso from "./ResultBoxPreso";
+
 // styles 
 import { getSoftware } from '../actions/actions'
 
 
 class ListPgContainer extends Component {
-
+	
 	render(){
 		return(
 			<div>
@@ -22,10 +20,8 @@ class ListPgContainer extends Component {
 	  }
 	}
 
+	const mapStateToProps = (state, ownProps) => ({ software: state.software });
+	const mapDispatchToProps = { getSoftware };
+	const AppContainer = connect(mapStateToProps, mapDispatchToProps)(ListPgContainer);
 
-
-	const mapStateToProps = (state) => {
-		return { software: state.software };
-	}
-
-export default connect(mapStateToProps)(ListPgContainer);
+	export default AppContainer;

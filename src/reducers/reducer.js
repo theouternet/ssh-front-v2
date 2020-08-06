@@ -1,27 +1,27 @@
 import { combineReducers } from "redux";
 
 
-const softwareReducer = (state = [], action) => {
-  switch (action.type) {
-    case 'SET_SOFTWARE':
-      return action.payload
+const softwareReducer = (state = { software: [], loading: false }, action) => {
+  switch(action.type) {
+    case 'LOADING_SOFTWARE':
+      return {
+        ...state,
+        software: [...state.software],
+        loading: true
+      }
+    case 'ADD_SOFTWARE':
+      return {
+        ...state,
+        software: action.software,
+        loading: false
+      }
     default:
       return state;
   }
-};
-
-
-const categoriesReducer = (state=[], action) => {
-	switch(action.type){
-		case 'FETCH_CATEGORIES':
-			return action.payload
-		default:
-			return state
-	}
 }
 
+
 const rootReducer = combineReducers({
-   categories: categoriesReducer,
    software: softwareReducer
 });
 
