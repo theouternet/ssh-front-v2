@@ -1,22 +1,17 @@
 import { combineReducers } from "redux";
 
 
-const softwareReducer = (state = { software: [], loading: false }, action) => {
+let softwareReducerInitialState = {fetchedSoftware: []}
+
+const softwareReducer = (state = softwareReducerInitialState, action) => {
   switch(action.type) {
-    case 'LOADING_SOFTWARE':
-      return {
-        ...state,
-        software: [...state.software],
-        loading: true
-      }
-    case 'ADD_SOFTWARE':
-      return {
-        ...state,
-        software: action.software,
-        loading: false
-      }
-    default:
-      return state;
+    case 'SET_SOFTWARE':
+        return {...state,
+          fetchedSoftware: action.software
+        };
+        default:
+          return state;
+
   }
 }
 
