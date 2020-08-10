@@ -11,7 +11,7 @@ class TopNav extends React.Component {
                 < Link className="nav-item" to="/home">
                     Home
                 </Link>
-                < Link className="nav-item" to="/list">
+                < Link className="nav-item" to="/software">
                   Software
                  </Link>
             </div>

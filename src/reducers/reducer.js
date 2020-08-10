@@ -1,13 +1,13 @@
 import { combineReducers } from "redux";
 
 
-let softwareReducerInitialState = {fetchedSoftware: []}
+let softwareReducerInitialState = {fetchedSoftwarez: []}
 
 const softwareReducer = (state = softwareReducerInitialState, action) => {
   switch(action.type) {
     case 'SET_SOFTWARE':
         return {...state,
-          fetchedSoftware: action.software
+          fetchedSoftwarez: action.softwarez
         };
         default:
           return state;
@@ -17,7 +17,7 @@ const softwareReducer = (state = softwareReducerInitialState, action) => {
 
 
 const rootReducer = combineReducers({
-   software: softwareReducer
+   softwarez: softwareReducer
 });
 
 export default rootReducer;
