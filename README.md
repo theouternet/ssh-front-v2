@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+---
+- switch to react-router instead of react-router-dom?
+- 1 more route
+- 1 more component
+- styling - see react-bootstrap
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run:

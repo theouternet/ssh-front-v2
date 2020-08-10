@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import SoftwareDetailPgContainer from './SoftwareDetailPgContainer'
 
 class SoftwareDetail extends Component {
 
@@ -6,9 +7,11 @@ class SoftwareDetail extends Component {
     const software = this.props.software
     return (
         <div className="box">
-          <h2>{software.software_name} (${software.description})</h2>
-          <h4 className="software-detail">{software.id}</h4>
-         
+          <h2>{software.software_name}</h2>
+          <h3>{software.description}</h3>   
+
+          <SoftwareDetailPgContainer software={software}/>
+
         </div>
     );
   }
