@@ -1,27 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from 'react-redux'
+import Software from '../Software'
 import {Link} from 'react-router-dom'
 
 // styles 
 import { getSoftware } from '../actions/actions'
 
 
-class ListPgContainer extends Component {
-	
-	render(){
-		return(
-			<div>
+const ListPgContainer = () => <div><Software /></div>
 
-        <p>{this.props.software.length}</p>
-        <p>{this.props.software.sofware_name}</p>
-
-			</div>
-		)
-	  }
-	}
-
-	const mapStateToProps = (state, ownProps) => ({ software: state.software });
-	const mapDispatchToProps = { getSoftware };
-	const AppContainer = connect(mapStateToProps, mapDispatchToProps)(ListPgContainer);
-
-	export default AppContainer;
+export default ListPgContainer;
