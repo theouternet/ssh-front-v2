@@ -7,6 +7,7 @@ import { getSoftware } from './actions/actions';
 import HomePg from "./components/HomePgContainer"
 import TopNav from "./components/TopNav"
 import ListPgContainer from "./components/ListPgContainer"
+import SoftwareDetailPgContainer from "./components/SoftwareDetailPgContainer"
 //
 
 
@@ -22,12 +23,13 @@ class App extends Component {
       <div className="App">
         < TopNav />
         <Switch>
+
           < Route exact path="/" render={() => <Redirect to="/home"/>}/>
           < Route exact path="/home" component={HomePg}/>
           < Route exact path="/software" component={ListPgContainer}/>
+          < Route path="/software/:software_id" component={SoftwareDetailPgContainer}/>
 
-          }}/>
-
+          
         </Switch>
       </div>
     )

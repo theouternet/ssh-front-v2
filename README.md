@@ -1,6 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ---
+- plan pg layouts
+- add route to detail pg
+- update db, assn's
+- 
 - switch to react-router instead of react-router-dom?
 - 1 more route
 - 1 more component

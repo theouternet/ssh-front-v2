@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import SoftwareDetailPgContainer from './SoftwareDetailPgContainer'
+import {Link} from 'react-router-dom'
+
 
 class SoftwareDetail extends Component {
 
@@ -7,10 +9,16 @@ class SoftwareDetail extends Component {
     const software = this.props.software
     return (
         <div className="box">
+
           <h2>{software.software_name}</h2>
           <h3>{software.description}</h3>   
 
-          <SoftwareDetailPgContainer software={software}/>
+					<li key={'software' + software.id}>
+						<Link to={`/software/${software.id}`}>
+							{software.name}
+              software={software}
+						</Link>
+					</li>
 
         </div>
     );
