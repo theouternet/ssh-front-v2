@@ -10,13 +10,9 @@ import ListPgContainer from "./components/ListPgContainer"
 import SoftwareDetailPgContainer from "./components/SoftwareDetailPgContainer"
 //
 
-
-
 class App extends Component {
 
-//
-
-  
+//  
 
   render(){
     return (
@@ -27,7 +23,8 @@ class App extends Component {
           < Route exact path="/" render={() => <Redirect to="/home"/>}/>
           < Route exact path="/home" component={HomePg}/>
           < Route exact path="/software" component={ListPgContainer}/>
-          < Route path="/software/:software_id" component={SoftwareDetailPgContainer}/>
+          
+          < Route path="/software/:id" component={SoftwareDetailPgContainer}/>
 
           
         </Switch>
