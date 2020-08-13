@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter, Redirect} from "react-router-dom";
 import { connect } from "react-redux"
 import './App.css';
-import { getSoftware } from './actions/actions';
+import { fetchSoftwarez } from './actions/actions';
 
 import HomePg from "./components/HomePgContainer"
 import TopNav from "./components/TopNav"
@@ -12,7 +12,11 @@ import SoftwareDetailPgContainer from "./components/SoftwareDetailPgContainer"
 
 class App extends Component {
 
-//  
+
+  componentDidMount() {
+    this.props.fetchSoftwarez()
+}
+
 
   render(){
     return (
@@ -24,19 +28,24 @@ class App extends Component {
           < Route exact path="/home" component={HomePg}/>
           < Route exact path="/software" component={ListPgContainer}/>
           
-          < Route path="/software/:id" component={SoftwareDetailPgContainer}/>
+          < Route exact path="/software/:id" render={(props) => {
+            let softwareId = props.match.params.id 
+             return  < SoftwareDetailPgContainer softwareId={softwareId}/> 
+          }}/>
 
-          
+
+
         </Switch>
       </div>
     )
-
-
   }
-
 }
 
-//
+const mapStateToProps = ({ softwarez }) => softwarez
 
-//
-export default (App);
+function mapDispatchToProps(dispatch){
+  return {
+      fetchSoftwarez: () => dispatch(fetchSoftwarez())}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
