@@ -6,6 +6,7 @@ import { fetchSoftwarez } from './actions/actions';
 
 import HomePg from "./components/HomePgContainer"
 import TopNav from "./components/TopNav"
+import Footer from "./components/Footer"
 import ListPgContainer from "./components/ListPgContainer"
 import SoftwareDetailPgContainer from "./components/SoftwareDetailPgContainer"
 //
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         < TopNav />
+        
         <Switch>
 
           < Route exact path="/" render={() => <Redirect to="/home"/>}/>
@@ -33,9 +35,10 @@ class App extends Component {
              return  < SoftwareDetailPgContainer softwareId={softwareId}/> 
           }}/>
 
-
-
         </Switch>
+
+        <Footer />
+
       </div>
     )
   }

@@ -11,8 +11,10 @@ class Software extends Component {
 
 
   render() {
+    
     const softwarez = this.props.fetchedSoftwarez.map(software => {
       return (
+
         <SoftwareDetail
             key={software.id}
             software={software}
@@ -22,7 +24,16 @@ class Software extends Component {
 
     return(
       <div>
+
+        <h2>Software List:</h2>
+        <h5>Make a Selection to Learn More</h5>
+        
+        <br></br>
+
         {softwarez}
+
+        <br></br>
+
       </div>
     );
   }

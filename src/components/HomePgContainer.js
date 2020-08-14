@@ -1,14 +1,19 @@
 import React from "react";
-//import HomePgHeader from "./HomePgHeader"
 import Footer from "./Footer"
-// styles
+import "../styles/home.scss"
 
 class HomePg extends React.Component {
 
 render(){
     return(
         <div className="home-pg-container">
-            < Footer />
+
+            <br />
+            <h1>-Software Shopper-</h1>
+            <br />
+            <h3>Accounting Edition</h3>
+            <br />
+
         </div>
     )
 }
