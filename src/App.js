@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter, Redirect} from "react-router-dom";
 import { connect } from "react-redux"
-import './App.css';
 import { fetchSoftwarez } from './actions/actions';
 
 import HomePg from "./components/HomePgContainer"
@@ -9,7 +8,8 @@ import TopNav from "./components/TopNav"
 import Footer from "./components/Footer"
 import ListPgContainer from "./components/ListPgContainer"
 import SoftwareDetailPgContainer from "./components/SoftwareDetailPgContainer"
-//
+import "./styles/app.scss"
+
 
 class App extends Component {
 

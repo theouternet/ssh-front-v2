@@ -7,19 +7,17 @@ class TopNav extends React.Component {
     
     render(){
       return (
-            <div className="nav-top">
-               
+            <div className="topnav">
+
+              <div className="navlft">
                 < Link className="nav-item" to="/home">
                 Home   
                 </Link>
-                <sp>   </sp>
+            
                 < Link className="nav-item" to="/software">
-                  Software
+                Software
                  </Link>
-                
-                 <br />
-                 <br />
-
+                 </div>
 
             </div>
 

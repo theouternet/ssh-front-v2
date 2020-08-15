@@ -1,0 +1,70 @@
+@import "variables.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+
+
+//HEADER
+
+.topnav {
+    background: $darkGreen;
+    margin-bottom: 0 !important;
+    height: 5vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right";
+    align-items: center;
+
+    font-family: $primaryFont;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    font-size: 1.5rem;
+}
+
+.navlft {
+    grid-area: left;
+    justify-self: start;
+}
+
+.nav-left a {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+
+.right-nav-links {
+    grid-area: right;
+    justify-self: end;
+}
+
+.right-nav-links a {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+
+
+
+
+
+//FOOTER
+
+
+
+
+
+
+
+//HOME
+
+.home-pg-container {
+    height: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35% auto;
+}
+
+
+
+
+//HOME

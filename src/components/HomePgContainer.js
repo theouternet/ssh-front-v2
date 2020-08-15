@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "./Footer"
-import "../styles/home.scss"
 
 class HomePg extends React.Component {
 
