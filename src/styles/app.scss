@@ -106,4 +106,32 @@ footer {
     grid-gap: 0 3%;
 }
 
+//
+
+.box1 {
+    transition: box-shadow .6s;
+    font-family: $primaryFont;
+    text-align: center;
+}
+
+.box1a {
+    border: 3px solid black;
+    box-shadow: 0px 0px 25px $lightGreen;
+    font-family: $primaryFont;
+    text-align: center;
+}
+
+.box-name-container {
+    padding-bottom: 0.8vh;
+    font-family: $primaryFont;
+    text-align: center;
+}
+
+//
+
+
+
+
+
+//DETAIL
 

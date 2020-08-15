@@ -23,7 +23,7 @@ class Software extends Component {
     });
 
     return(
-      <div className="list-container animated bounceInLeft">
+      <div className="list-container">
       
         <div className="list-header">
          <h1 className="list-text">Software List:</h1>
