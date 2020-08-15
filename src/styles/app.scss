@@ -1,7 +1,5 @@
 @import "variables.scss";
-
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
-
 
 //HEADER
 
@@ -14,7 +12,6 @@
     grid-template-columns: 50% 50%;
     grid-template-areas: "left right";
     align-items: center;
-
     font-family: $primaryFont;
     font-weight: bold;
     letter-spacing: 2.5px;
@@ -26,45 +23,87 @@
     justify-self: start;
 }
 
-.nav-left a {
+.navlft a {
     padding-left: 1vw;
     padding-right: 1vw;
+    color: white;
+    text-decoration: none;
 }
-
-
-.right-nav-links {
-    grid-area: right;
-    justify-self: end;
-}
-
-.right-nav-links a {
-    padding-left: 1vw;
-    padding-right: 1vw;
-}
-
-
-
-
 
 
 //FOOTER
 
+footer {
+    color:$white;
+    background: $black;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
 
-
-
-
+    font-family: $primaryFont;
+    letter-spacing: .15vw;
+}
 
 
 //HOME
 
 .home-pg-container {
-    height: 80vw;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 35% auto;
+    background-image: url("https://images-na.ssl-images-amazon.com/images/I/71KQ7otFHdL._AC_UL1500_.jpg" );
+    background-position: top left;
+    background-color :hsl(0, 0%, 7%);
+    display: grid; 
+    height: 800px;
+}
+
+.title-container {
+    font-family: $primaryFont;
+    align-self: center;
+    position: relative;
+    bottom: 200px;
+}
+
+.title-container h3{
+    font-weight: bold;
+    color: black;
+    font-size: 3.5vw;
+    margin-bottom: 1.2vh;
+    letter-spacing: .7vw;
+    text-shadow: 8px 9px 16px rgb(140, 201, 134);
+}
+
+.title-container button {
+    margin-top: 2vh;
+    font-family: $primaryFont;
+    letter-spacing: .1vw;
+    border-color: $black;
+    box-shadow: 0px 8px 11px  rgb(140, 201, 134);
 }
 
 
+//LIST 
+
+.list-container {
+    margin-left: 1.2vw;
+    margin-right: 1.2vw;
+}
+
+.list-header {
+    margin-top: 1.8vh;
+}
+
+.list-text {
+    color: $black;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: $primaryFont;
+}
+
+.list-software {
+    margin-top: 2.1vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 3%;
+}
 
 
-//HOME

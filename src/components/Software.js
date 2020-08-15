@@ -23,16 +23,18 @@ class Software extends Component {
     });
 
     return(
-      <div>
+      <div className="list-container animated bounceInLeft">
+      
+        <div className="list-header">
+         <h1 className="list-text">Software List:</h1>
+         <h5>Make a Selection to Learn More</h5>
+      </div>
 
-        <h2>Software List:</h2>
-        <h5>Make a Selection to Learn More</h5>
-        
-        <br></br>
-
-        {softwarez}
-
-        <br></br>
+        <div className="list-software">
+          <br></br>
+            {softwarez}
+          <br></br>
+        </div>
 
       </div>
     );

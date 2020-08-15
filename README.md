@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://create-react-app.dev/docs/adding-bootstrap/
 - blogz
 - host front end
+- click, qb entry sounds
 
 ---
 
