@@ -2,10 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ---
 
-- header, footer and home pg
 - readme
-- styling - see react-bootstrap
-https://create-react-app.dev/docs/adding-bootstrap/
+- styling - loading, no white space, list card gap, 
 - blogz
 - host front end
 - click, qb entry sounds

@@ -89,9 +89,12 @@ footer {
 
 .list-header {
     margin-top: 1.8vh;
+    margin-bottom: 1.8vh;
+    text-align: center;
 }
 
 .list-text {
+    
     color: $black;
     font-weight: bold;
     letter-spacing: 3px;
@@ -99,19 +102,23 @@ footer {
 }
 
 .list-software {
-    margin-top: 2.1vh;
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0 3%;
-}
+    grid-gap: 15px 15px;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
 
-//
+    grid-column-start: auto;
+}
 
 .box1 {
     transition: box-shadow .6s;
     font-family: $primaryFont;
     text-align: center;
+
+    
 }
 
 .box1a {
@@ -130,8 +137,20 @@ footer {
 //
 
 
-
-
-
 //DETAIL
 
+
+  .details {
+
+    text-align: center;
+  }
+
+.review {
+    font-family: $primaryFont;
+    text-align: center;
+    background: $darkGreen;
+}
+
+.review h3 {
+    color: $white
+}

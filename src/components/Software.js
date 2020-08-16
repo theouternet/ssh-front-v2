@@ -31,9 +31,7 @@ class Software extends Component {
       </div>
 
         <div className="list-software">
-          <br></br>
             {softwarez}
-          <br></br>
         </div>
 
       </div>

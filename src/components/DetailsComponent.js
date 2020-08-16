@@ -8,17 +8,24 @@ class DetailsComponent extends React.Component{
    
         return (
 
-            <div>
+            <div className="wrapper">
 
+
+            <div className="details-container">
+            <div className="details">
             <img src={image_link} alt={software_name} width="225" height="125"/>
             <h4>Pros: {subheader}</h4>
 
             <h4>Editor's Rating: {editor_rating}/5</h4>   
             <h4>Price: {price}</h4>  
-            <br></br>
-            <br></br>
-            <h6>Full Review: {full_review}</h6>  
-            <br></br>
+            </div>
+
+            </div>
+
+
+            <div className="review">
+            <h3>Full Review: {full_review}</h3>  
+            </div>
 
 
             </div>
