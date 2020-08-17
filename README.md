@@ -2,11 +2,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ---
 
-- readme
-- styling - loading, no white space, list card gap, 
-- blogz
-- host front end
-- click, qb entry sounds
+Software Shopper: Accounting Edition is a platform for B2B decision makers to find the right software for their companies using data provisioned from pcmag.com, long a source for quality editorial reviews of technology products. 
+
+Users are greeted by a home page. From there, they can navigate to a browse/list page of software titles. From the list page, the user can click on a title to see the full review.
+
+Frontend developed with React. Backend developed with Ruby on Rails and hosted at https://ssh-api-v6.herokuapp.com/api/v1
+
+Backend Repository: https://github.com/theouternet/ssh-api-v6
+
+---
+# Instructions
+
+- Run 'yarn install'
+- Run 'yarn start'
+- Navigate to http://localhost:3000 to view in the browser.
 
 ---
 
