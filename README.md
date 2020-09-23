@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+----
 
 Software Shopper: Accounting Edition is a platform for B2B decision makers to find the right software for their companies using data provisioned from pcmag.com, long a source for quality editorial reviews of technology products. 
 
